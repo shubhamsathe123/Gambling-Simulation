@@ -8,6 +8,7 @@ let luckiest_count = 0;
 let unluckiest_count = 0;
 var luckiest_days = [];
 var unluckiest_days = [];
+var user_decide = 1;
 
 class utility
 {
@@ -54,7 +55,14 @@ class utility
        var total =  monthly_investment - monthly_stake ;
        process.stdout.write(`Gambler Loss $${ total } in this month`) 
      }
-  } 
+     var prompt = require('prompt-sync')();
+     if(monthly_stake > monthly_investment){
+        var user_decide = prompt('Press 1 to continue game : ')
+        if(user_decide == 1){
+             this.gamblingGame();
+        }
+     } 
+  }
 }
 
 
